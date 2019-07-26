@@ -1,0 +1,760 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <meta name="x5-orientation" content="portrait" />
+        <meta name="x5-fullscreen" content="true">
+        <meta name="x5-page-mode" content="app">
+        <meta name="screen-orientation" content="portrait">
+        <meta name="full-screen" content="yes">
+        <meta name="browsermode" content="application">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="360-fullscreen" content="true">
+        <title>旅行日记</title>
+        <script src="easeljs.min.js"></script>
+        <script src="preloadjs.min.js"></script>
+        <script src="tweenjs.min.js"></script>
+    </head>
+    <body style="margin:0px 0px 0px 0px; background-color: #ffffff;padding: 0px;">
+        <div style="position:absolute;margin:0;padding:0;overflow:visible;-webkit-transform:translateZ(0);z-index:0;">
+            <canvas id="canvas" width="750" height="1334"></canvas>
+        </div>
+        <script>
+            var createjs = createjs || {};
+            
+            var pages = [
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page1_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page1_image1"));
+                    page1_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: -100, regX: -25, alpha: 0});
+                    createjs.Tween.get(page1_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_shape3 = new createjs.Shape();
+                    page1_shape3.graphics.beginStroke(1);
+                    page1_shape3.graphics.beginFill("#333").drawCircle(15, 15, 8);
+                    page1_shape3.graphics.endStroke();
+                    page1_shape3.set({x: 0, y: 80, alpha: 0});
+                    createjs.Tween.get(page1_shape3).wait(1500).to({x: 65, alpha: 1}, 500);
+                    
+                    var page1_shape4 = new createjs.Shape();
+                    page1_shape4.graphics.beginStroke(1);
+                    page1_shape4.graphics.beginFill("#666").drawCircle(15, 15, 8);
+                    page1_shape4.graphics.endStroke();
+                    page1_shape4.set({x: 35, y: 80, alpha: 0});
+                    createjs.Tween.get(page1_shape4).wait(1800).to({x: 100, alpha: 1}, 500);
+                    
+                    var page1_shape5 = new createjs.Shape();
+                    page1_shape5.graphics.beginStroke(1);
+                    page1_shape5.graphics.beginFill("#ccc").drawCircle(15, 15, 8);
+                    page1_shape5.graphics.endStroke();
+                    page1_shape5.set({x: 70, y: 80, alpha: 0});
+                    createjs.Tween.get(page1_shape5).wait(2100).to({x: 135, alpha: 1}, 500);
+                    
+                    var page1_text1 = new createjs.Text("W A R M T H", "25px Arial", "#aaa");
+                    page1_text1.set({x: 40, y: 30, scaleY: 0});
+                    createjs.Tween.get(page1_text1).wait(1000).to({scaleY: 1}, 500);
+                    
+                    var page1_text2 = new createjs.Text("旅行记", "23px Arial", "#666");
+                    page1_text2.set({x: -100, y: 130, alpha: 0});
+                    createjs.Tween.get(page1_text2).wait(2500).to({x: 65, alpha: 1}, 1000);
+                    
+                    var page1_text2_1 = new createjs.Text("旅行记", "23px Arial", "#666");
+                    page1_text2_1.set({x: 760, y: 130, alpha: 0});
+                    createjs.Tween.get(page1_text2_1).wait(2500).to({x: 65, alpha: 1}, 1000);
+                    
+                    var page1_text3 = new createjs.Text("TRAVEL NOTES", "bold 12px Arial", "#aaa");
+                    page1_text3.set({x: 50, y: 160});
+                    
+                    var page1_text4 = new createjs.Text("TRAVEL NOTES", "16px Arial", "#333");
+                    page1_text4.set({x: 40, y: 120, alpha: 0});
+                    createjs.Tween.get(page1_text4).wait(3500).to({y: 165, alpha: 1}, 500);
+                    
+                    var page1_shape1 = new createjs.Shape();
+                    page1_shape1.graphics.beginStroke(1).rect(0, 0, 200, 200);
+                    page1_shape1.graphics.endStroke();
+                    page1_shape1.set({x: -350, alpha: 0});
+                    createjs.Tween.get(page1_shape1).wait(4000).to({x: 0, alpha: 1}, 1000);
+                    
+                    var page1_shape2 = page1_shape1.clone();
+                    page1_shape2.set({x: 350, y: 15, alpha: 0});
+                    createjs.Tween.get(page1_shape2).wait(4000).to({x: 15, alpha: 1}, 1000);
+                    
+                    var page1_item1 = new createjs.Container();
+                    page1_item1.addChild(page1_shape1);
+                    page1_item1.addChild(page1_shape2);
+                    page1_item1.addChild(page1_shape3);
+                    page1_item1.addChild(page1_shape4);
+                    page1_item1.addChild(page1_shape5);
+                    page1_item1.addChild(page1_text1);
+                    page1_item1.addChild(page1_text2);
+                    page1_item1.addChild(page1_text2_1);
+                    page1_item1.addChild(page1_text3);
+                    page1_item1.addChild(page1_text4);
+                    page1_item1.set({x: 25, y: 800});
+                    
+                    var page1_group1_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page1_image2"));
+                    page1_group1_image1.set({y: -100, x: -100, alpha: 0});
+                    page1_group1_image1.on("click", function(){
+                        window.page = 1;
+                        var stage = window.stage;
+                        canvas.removeChild(stage);
+                        window.pages[window.page]();
+                    });
+                    createjs.Tween.get(page1_group1_image1).wait(1000).to({x: 0, y: 0, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    
+                    var page1_group1_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page1_image6"));
+                    page1_group1_image2.set({y: -100, x: -100, alpha: 0});
+                    createjs.Tween.get(page1_group1_image2).wait(500).to({x: 5, y: 5, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group1_image3 = new createjs.Bitmap(loadSourseQueue.getResult("page1_image7"));
+                    page1_group1_image3.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: -100, x: -100, alpha: 0});
+                    createjs.Tween.get(page1_group1_image3).to({x: 10, y: 10, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group2_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group2_image1"));
+                    page1_group2_image1.set({y: -100, x: 300, alpha: 0});
+                    page1_group2_image1.on("click", function(){
+                        window.page = 9;
+                        var stage = window.stage;
+                        canvas.removeChild(stage);
+                        window.pages[window.page]();
+                    });
+                    createjs.Tween.get(page1_group2_image1).wait(1000).to({x: 217, y: 0, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group2_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group2_image2"));
+                    page1_group2_image2.set({y: -100, x: 300, alpha: 0});
+                    createjs.Tween.get(page1_group2_image2).wait(500).to({x: 222, y: 5, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group2_image3 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group2_image3"));
+                    page1_group2_image3.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: -100, x: 300, alpha: 0});
+                    createjs.Tween.get(page1_group2_image3).to({x: 227, y: 10, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    // 第三组图片 BEGIN
+                    var page1_group3_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group3_image1"));
+                    page1_group3_image1.set({ y: 200, x: -100, alpha: 0});
+                    page1_group3_image1.on("click", function(){
+                        window.page = 12;
+                        var stage = window.stage;
+                        canvas.removeChild(stage);
+                        window.pages[window.page]();
+                    });
+                    createjs.Tween.get(page1_group3_image1).wait(1000).to({x: 0, y: 153, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group3_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group3_image2"));
+                    page1_group3_image2.set({y: 200, x: -100, alpha: 0});
+                    createjs.Tween.get(page1_group3_image2).wait(500).to({x: 5, y: 158, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group3_image3 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group3_image3"));
+                    page1_group3_image3.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 200, x: -100, alpha: 0});
+                    createjs.Tween.get(page1_group3_image3).to({x: 10, y: 163, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    // 第三组图片 END
+                    
+                    // 第四组图片 BEGIN
+                    var page1_group4_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group4_image1"));
+                    page1_group4_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 200, x: 300, alpha: 0});
+                    page1_group4_image1.on("click", function(){
+                        window.page = 14;
+                        var stage = window.stage;
+                        canvas.removeChild(stage);
+                        window.pages[window.page]();
+                    });
+                    createjs.Tween.get(page1_group4_image1).wait(1000).to({x: 217, y: 153, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group4_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group4_image2"));
+                    page1_group4_image2.set({y: 200, x: 300, alpha: 0});
+                    createjs.Tween.get(page1_group4_image2).wait(500).to({x: 222, y: 158, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page1_group4_image3 = new createjs.Bitmap(loadSourseQueue.getResult("page1_group4_image3"));
+                    page1_group4_image3.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 200, x: 300, alpha: 0});
+                    createjs.Tween.get(page1_group4_image3).to({x: 227, y: 163, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    // 第四组图片 END
+                    
+                    var page1_item2 = new createjs.Container();
+                    page1_item2.addChild(page1_group1_image3);
+                    page1_item2.addChild(page1_group1_image2);
+                    page1_item2.addChild(page1_group1_image1);
+                    page1_item2.addChild(page1_group2_image3);
+                    page1_item2.addChild(page1_group2_image2);
+                    page1_item2.addChild(page1_group2_image1);
+                    page1_item2.addChild(page1_group3_image3);
+                    page1_item2.addChild(page1_group3_image2);
+                    page1_item2.addChild(page1_group3_image1);
+                    page1_item2.addChild(page1_group4_image3);
+                    page1_item2.addChild(page1_group4_image2);
+                    page1_item2.addChild(page1_group4_image1);
+                    
+                    var page1_item3_shape1 = new createjs.Shape();
+                    page1_item3_shape1.graphics.beginStroke("#333").ss(3).lineTo(0, 20).lineTo(20, 0).lineTo(40, 20);
+                    page1_item3_shape1.graphics.endStroke();
+                    var page1_item3_shape2 = new createjs.Shape();
+                    page1_item3_shape2.graphics.beginStroke("#333").ss(3).lineTo(0, 40).lineTo(20, 20).lineTo(40, 40);
+                    page1_item3_shape2.graphics.endStroke();
+                    var page1_item3_shape3 = new createjs.Shape();
+                    page1_item3_shape3.graphics.beginStroke("#333").ss(3).lineTo(0, 60).lineTo(20, 40).lineTo(40, 60);
+                    page1_item3_shape3.graphics.endStroke();
+                    
+                    var page1_item3 = new createjs.Container();
+                    page1_item3.set({x: 355, y: 1250, alpha: 0});
+                    page1_item3.addChild(page1_item3_shape1);
+                    page1_item3.addChild(page1_item3_shape2);
+                    page1_item3.addChild(page1_item3_shape3);
+                    createjs.Tween.get(page1_item3, {loop:true}).wait(3000).to({alpha: 1, y: 1220}, 400).to({alpha: 0, y: 1200}, 300);
+                    
+                    stage.addChild(page1_image1);
+                    stage.addChild(page1_item1);
+                    stage.addChild(page1_item2);
+                    stage.addChild(page1_item3);
+                    page1_item2.set({x: 300, y: 800});
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page2
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page2_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page2_image1"));
+                    page2_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page2_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page2_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page2_image2"));
+                    page2_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page2_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page2_image1);
+                    stage.addChild(page2_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page3
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page3_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page3_image1"));
+                    page3_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page3_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page3_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page3_image2"));
+                    page3_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page3_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page3_image1);
+                    stage.addChild(page3_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page4
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page4_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page4_image1"));
+                    page4_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page4_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page4_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page4_image2"));
+                    page4_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page4_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page4_image1);
+                    stage.addChild(page4_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page5
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page5_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page5_image1"));
+                    page5_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page5_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page5_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page5_image2"));
+                    page5_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page5_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page5_image1);
+                    stage.addChild(page5_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page6
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page6_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page6_image1"));
+                    page6_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page6_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page6_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page6_image2"));
+                    page6_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page6_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page6_image1);
+                    stage.addChild(page6_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page7
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page7_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page7_image1"));
+                    page7_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page7_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page7_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page7_image2"));
+                    page7_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page7_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page7_image1);
+                    stage.addChild(page7_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page8
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page8_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page8_image1"));
+                    page8_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page8_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page8_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page8_image2"));
+                    page8_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page8_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page8_image1);
+                    stage.addChild(page8_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page9
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page9_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page9_image1"));
+                    page9_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, regX: -25, alpha: 0});
+                    createjs.Tween.get(page9_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page9_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page9_image2"));
+                    page9_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 0, regX: -25, alpha: 0});
+                    createjs.Tween.get(page9_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page9_image1);
+                    stage.addChild(page9_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page10
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page10_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page10_image1"));
+                    page10_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 150, x: -125, alpha: 0});
+                    createjs.Tween.get(page10_image1).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page10_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page10_image2"));
+                    page10_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 700, x: 875, alpha: 0});
+                    createjs.Tween.get(page10_image2).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page10_image1);
+                    stage.addChild(page10_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page11
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page11_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page11_image1"));
+                    page11_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 150, x: -125, alpha: 0});
+                    createjs.Tween.get(page11_image1).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page11_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page11_image2"));
+                    page11_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 700, x: 875, alpha: 0});
+                    createjs.Tween.get(page11_image2).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page11_image1);
+                    stage.addChild(page11_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page12
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page12_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page12_image1"));
+                    page12_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 150, x: -125, alpha: 0});
+                    createjs.Tween.get(page12_image1).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page12_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page12_image2"));
+                    page12_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 700, x: 875, alpha: 0});
+                    createjs.Tween.get(page12_image2).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page12_image1);
+                    stage.addChild(page12_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page13
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page13_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page13_image1"));
+                    page13_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 100, x: -125, alpha: 0});
+                    createjs.Tween.get(page13_image1).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page13_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page13_image2"));
+                    page13_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 400, x: 875, alpha: 0});
+                    createjs.Tween.get(page13_image2).wait(800).to({x: 350, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page13_image3 = new createjs.Bitmap(loadSourseQueue.getResult("page13_image3"));
+                    page13_image3.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 700, x: -125, alpha: 0});
+                    createjs.Tween.get(page13_image3).wait(1600).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page13_image1);
+                    stage.addChild(page13_image2);
+                    stage.addChild(page13_image3);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page14
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page14_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page14_image1"));
+                    page14_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 100, x: -125, alpha: 0});
+                    createjs.Tween.get(page14_image1).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page14_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page14_image2"));
+                    page14_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 400, x: 875, alpha: 0});
+                    createjs.Tween.get(page14_image2).wait(800).to({x: 350, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page14_image3 = new createjs.Bitmap(loadSourseQueue.getResult("page13_image3"));
+                    page14_image3.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 700, x: -125, alpha: 0});
+                    createjs.Tween.get(page14_image3).wait(1600).to({x: 25, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page14_image1);
+                    stage.addChild(page14_image2);
+                    stage.addChild(page14_image3);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page15
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page15_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page15_image1"));
+                    page15_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: -150, x: 25, alpha: 0});
+                    createjs.Tween.get(page15_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page15_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page15_image2"));
+                    page15_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, x: 25, alpha: 0});
+                    createjs.Tween.get(page15_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page15_image1);
+                    stage.addChild(page15_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page16
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page16_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page16_image1"));
+                    page16_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: -150, x: 25, alpha: 0});
+                    createjs.Tween.get(page16_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page16_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page16_image2"));
+                    page16_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, x: 25, alpha: 0});
+                    createjs.Tween.get(page16_image2).to({y: 700, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page16_image1);
+                    stage.addChild(page16_image2);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                },
+                // page17
+                function(){
+                    var stage = new createjs.Stage();
+                    stage.set({x: 375, regX: 375, width: window.canvasWidth, height: window.canvasHeight});
+                    
+                    var page17_image1 = new createjs.Bitmap(loadSourseQueue.getResult("page17_image1"));
+                    page17_image1.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: -150, x: 25, alpha: 0});
+                    createjs.Tween.get(page17_image1).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page17_image2 = new createjs.Bitmap(loadSourseQueue.getResult("page17_image2"));
+                    page17_image2.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, x: 25, alpha: 0});
+                    createjs.Tween.get(page17_image2).to({y: 780, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page17_image3 = new createjs.Bitmap(loadSourseQueue.getResult("page17_image3"));
+                    page17_image3.set({shadow: {color: "#ccc", offsetX: 10, offsetY: 10, blur: 10}, y: 1334, x: 385, alpha: 0});
+                    createjs.Tween.get(page17_image3).to({y: 150, alpha: 1}, 1500, createjs.Ease.quintOut);
+                    
+                    var page17_text1 = new createjs.Text("End", "60px Arial", "#666");
+                    page17_text1.set({x: 485, y: 580, alpha: 0});
+                    createjs.Tween.get(page17_text1).wait(2000).to({alpha: 1}, 1000, createjs.Ease.quintOut);
+                    
+                    stage.addChild(page17_image1);
+                    stage.addChild(page17_image2);
+                    stage.addChild(page17_image3);
+                    stage.addChild(page17_text1);
+                    stage.addChild(window.initHome());
+                    
+                    window.stage = stage;
+                    window.canvas.addChild(stage);
+                }
+            ];
+
+            var canvasWidth = 750;
+            var canvasHeight = 1334;
+
+            var screenHeight = window.screen.height;
+            var screenWidth = window.screen.width;
+            var styleHeight = screenHeight;
+            var styleWidth = canvasWidth * (styleHeight / canvasHeight);
+
+            var mouseDownStartX = 0;
+            var mouseDownStartY = 0;
+            var page = 0;
+            var stage = null;
+            var music = {
+                src: 'music.mp3',
+                icon: null,
+                audio: null,
+                stopLine: null
+            };
+
+            var canvas = new createjs.Stage("canvas");
+            createjs.Touch.enable(canvas);
+
+            canvas.addEventListener("stagemousedown", function (event) {
+                canvas.mouseDownStartX = event.target.mouseX;
+                canvas.mouseDownStartY = event.target.mouseY;
+            });
+            canvas.addEventListener("stagemouseup", function (event) {
+                canvas.mouseDownEndX = event.target.mouseX;
+                canvas.mouseDownEndY = event.target.mouseY;
+
+                var X = canvas.mouseDownEndX - canvas.mouseDownStartX;
+                var Y = canvas.mouseDownEndY - canvas.mouseDownStartY;
+                if (Math.abs(Y) > Math.abs(X) && Y < -50) {
+                    window.nextPage();
+                }
+                if (Math.abs(Y) > Math.abs(X) && Y > 50) {
+                    window.lastPage();
+                }
+            });
+
+            var loadSourseQueue = new createjs.LoadQueue();
+            loadSourseQueue.on("complete", run, this);
+
+            loadSourseQueue.loadManifest([
+                {id: "music_icon", src: "image/music_icon.png", type: createjs.AbstractLoader.IMAGE},
+                {id: "home_icon", src: "image/home_icon.png", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_image1", src: "image/page1/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_image2", src: "image/page1/group1/1.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group2_image1", src: "image/page1/group2/1.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group2_image2", src: "image/page1/group2/2.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group2_image3", src: "image/page1/group2/3.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group3_image1", src: "image/page1/group3/1.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group3_image2", src: "image/page1/group3/2.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group3_image3", src: "image/page1/group3/3.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group4_image1", src: "image/page1/group4/1.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group4_image2", src: "image/page1/group4/2.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_group4_image3", src: "image/page1/group4/3.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_image6", src: "image/page1/group1/2.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page1_image7", src: "image/page1/group1/3.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page2_image1", src: "image/page2/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page2_image2", src: "image/page2/2.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page3_image1", src: "image/page3/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page3_image2", src: "image/page3/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page4_image1", src: "image/page4/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page4_image2", src: "image/page4/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page5_image1", src: "image/page5/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page5_image2", src: "image/page5/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page6_image1", src: "image/page6/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page6_image2", src: "image/page6/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page7_image1", src: "image/page7/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page7_image2", src: "image/page7/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page8_image1", src: "image/page8/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page8_image2", src: "image/page8/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page9_image1", src: "image/page9/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page9_image2", src: "image/page9/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page10_image1", src: "image/page10/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page10_image2", src: "image/page10/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page11_image1", src: "image/page11/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page11_image2", src: "image/page11/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page12_image1", src: "image/page12/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page12_image2", src: "image/page12/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page13_image1", src: "image/page13/1.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page13_image2", src: "image/page13/2.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page13_image3", src: "image/page13/3.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page14_image1", src: "image/page14/1.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page14_image2", src: "image/page14/2.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page14_image3", src: "image/page14/3.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page15_image1", src: "image/page15/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page15_image2", src: "image/page15/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page16_image1", src: "image/page16/1.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page16_image2", src: "image/page16/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page17_image1", src: "image/page17/1.jpg", type: createjs.AbstractLoader.IMAGE},
+                {id: "page17_image2", src: "image/page17/2.JPG", type: createjs.AbstractLoader.IMAGE},
+                {id: "page17_image3", src: "image/page17/3.JPG", type: createjs.AbstractLoader.IMAGE}
+                
+            ]);
+
+            function run() {
+                window.initBg();
+                window.initMusic();
+                pages[window.page]();
+                createjs.Ticker.addEventListener("tick", canvas);
+            }
+            
+            function initBg(){
+                var bg = new createjs.Shape();
+                bg.graphics.beginStroke().beginFill("#f3f3f3").rect(0, 0, 750, 1334);
+                bg.graphics.endStroke();
+                window.canvas.addChild(bg);
+            }
+            
+            function initHome(){
+                var sourse = loadSourseQueue.getResult('home_icon');
+                var home = new createjs.Bitmap(sourse);
+                home.set({x: 355, y: 1234});
+                home.on("click", function(){
+                    window.page = 0;
+                    var stage = window.stage;
+                    canvas.removeChild(stage);
+                    window.pages[window.page]();
+                });
+                
+                return home;
+            }
+            
+            function initMusic() {
+                var sourse = loadSourseQueue.getResult('music_icon');
+                var bitmap = new createjs.Bitmap(sourse);
+                bitmap.set({
+                    x: 700,
+                    y: 45,
+                    width: 44,
+                    height: 44,
+                    regX: 22,
+                    regY: 22
+                });
+                
+                window.music.audio = new Audio(window.music.src);
+                window.music.audio.controls = false;
+                window.music.audio.autoplay = true;
+                window.music.audio.loop = true;
+                document.body.appendChild(window.music.audio);
+                
+                bitmap.on("click", function(){
+                    window.music.icon.paused = !window.music.icon.paused;
+                    if (window.music.icon.paused){
+                        window.music.audio.pause();
+                        window.canvas.addChild(window.music.stopLine);
+                    } else{
+                        window.music.audio.play();
+                        window.canvas.removeChild(window.music.stopLine);
+                    }
+                });
+                
+                window.canvas.addChild(bitmap);
+                
+                window.music.stopLine = new createjs.Shape();
+                window.music.stopLine.graphics.setStrokeStyle(3).beginStroke("#fff");
+                window.music.stopLine.graphics.lineTo(0, 0);
+                window.music.stopLine.graphics.lineTo(44, 0);
+                window.music.stopLine.rotation = -45;
+                window.music.stopLine.x = 700;
+                window.music.stopLine.y = 45;
+                window.music.stopLine.regX = 22;
+                window.music.stopLine.graphics.endStroke();
+                
+                window.music.icon = createjs.Tween.get(bitmap, {loop:true}).to({rotation: 360}, 2000);
+            }
+
+            function nextPage() {
+                if (window.page < window.pages.length-1){
+                    window.page += 1;
+                } else{
+                    window.page = 0;
+                }
+                var stage = window.stage;
+                createjs.Tween.get(stage).to({x: 375, y: 0, scaleX: 0.5, scaleY: 0.5}, 500).call(function () {
+                    canvas.removeChild(stage);
+                    window.pages[window.page]();
+                });
+            };
+            
+            function lastPage() {
+                if (window.page > 0){
+                    window.page -= 1;
+                    var stage = window.stage;
+                    createjs.Tween.get(stage).to({x: 375, y: 1334, scaleX: 0.5, scaleY: 0.5}, 500).call(function () {
+                        canvas.removeChild(stage);
+                        window.pages[window.page]();
+                    });
+                } else{
+                    alert("没有上一页了");
+                }
+            }
+
+            var canvasObj = document.getElementById("canvas");
+            canvasObj.style.width = styleWidth + "px";
+            canvasObj.style.height = styleHeight + "px";
+            canvasObj.style.padding = "0px";
+            canvasObj.style.margin = "0px 0px 0px " + (screenWidth - styleWidth) / 2 + "px";
+        </script>
+    </body>
+</html>
